@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".ui.activities.MainActivity">
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#EDE7F6"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="15dp"
+            android:contentDescription="@string/navigation_icon"
+            android:src="@drawable/ic_camera_outlined" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:fontFamily="@font/crete_round_italic"
+            android:text="@string/home"
+            android:textAlignment="center"
+            android:textColor="@color/font_color_dark"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="15dp"
+            android:contentDescription="@string/navigation_icon"
+            android:src="@drawable/ic_camera_outlined" />
+    </RelativeLayout>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="com.example.metinapp.ui.fragments.HomeFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        app:layout_constraintBottom_toTopOf="@id/guidelineBottom"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        tools:layout="@layout/fragment_home">
+
+    </androidx.fragment.app.FragmentContainerView>
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/altMenuContainer"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:layoutDescription="@xml/floating_action_button_group_scene"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/altMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#EDE7F6"
+            app:itemIconTint="#9303BA"
+            app:itemTextColor="@color/black"
+            app:labelVisibilityMode="selected"
+
+            app:layout_constraintBottom_toBottomOf= "parent"
+            app:menu="@menu/navigation" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fotoCek"
+            style="@style/Widget.MaterialComponents.FloatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:contentDescription="@string/take_photo"
+            android:visibility="invisible"
+            app:backgroundTint="#00BCD4"
+            app:elevation="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_camera_outlined"
+            app:tint="@color/gray" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/hafizadanFotoSec"
+            style="@style/Widget.MaterialComponents.FloatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginBottom="30dp"
+            android:contentDescription="@string/pick_image"
+            android:visibility="invisible"
+            app:backgroundTint="#FF9800"
+            app:elevation="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_insetEdge="bottom"
+            app:srcCompat="@drawable/ic_upload_outlined"
+            app:tint="@color/gray" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingButton"
+            style="@style/Widget.MaterialComponents.FloatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:contentDescription="@string/scan"
+            app:backgroundTint="#9303BA"
+            app:elevation="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_scan_outlined"
+            app:tint="@color/gray" />
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="60dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

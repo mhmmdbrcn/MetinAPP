@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">MetinAPP</string>
+    <string name="home">ANASAYFA</string>
+    <string name="profile">PROFİL</string>
+    <string name="tarama">KAYNAK SEÇ</string>
+    <string name="pick_image">Fotoğraf Seç</string>
+    <string name="take_photo">Fotoğraf Çek</string>
+    <string name="image_chosen_by_user">image chosen by user</string>
+    <string name="scan">Tara</string>
+    <string name="navigation_icon">Navigation Icon</string>
+    <string name="hello_blank_fragment">HOŞGELDİNİZ</string>
+    <string name="result">TARAMA SONUCU</string>
+    <string name="translate_result">ÇEVİRİ SONUCU</string>
+    <string name="edit_extracted_text">Metni Düzenle</string>
+    <string name="translate">Metni Çevir</string>
+    <string name="translateTr">Metni ÇevirTr</string>
+</resources>
